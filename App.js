@@ -18,11 +18,22 @@ export default class HelloWorldApp extends Component {
     })
   }
 
+  placeDeleteHandler = index =>{
+    this.setState(prevState => {
+      return{
+        places: prevState.places.filter((place, i)=>{
+          return i!==index ;
+        })
+      }
+    })
+  }
+
+
   render() {    
     return (
       <View style={styles.Container}>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />           
-        <PlaceList places={this.state.places}/>
+        <PlaceList places={this.state.places} onItemDeleted={this.placeDeleteHandler}/>
       </View>
     );
   }
