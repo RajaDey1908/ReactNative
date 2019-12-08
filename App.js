@@ -18,8 +18,7 @@ export default class HelloWorldApp extends Component {
     })
   }
 
-  render() {
-    
+  render() {    
     return (
       <View style={styles.Container}>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />           
